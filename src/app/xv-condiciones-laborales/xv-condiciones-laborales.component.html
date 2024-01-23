@@ -1,0 +1,61 @@
+<div class="container text-center mt-2">
+    <h2 class="mb-4"><i class="fas fa-users"></i>Condiciones Laborales</h2>
+</div>
+<div class="container mt-4">
+
+    <div class="card border-primary" [@fadeInAnimation]="'in'" (click)="toggleCard('iluminacion')"
+        [ngClass]="{'selected-card': selectedCard === 'iluminacion'}">
+        <div class="card-header">
+            <h4><i class="fas fa-lightbulb"></i> Iluminación</h4>
+        </div>
+        <div class="card-body">
+            <p>La iluminación adecuada en el lugar de trabajo es esencial para diversas razones:</p>
+            <ul>
+                <li>Salud Visual: Una iluminación inadecuada puede causar fatiga ocular, dolores de cabeza y otros
+                    problemas de visión.</li>
+                <li>Seguridad: La falta de iluminación adecuada puede aumentar el riesgo de accidentes y lesiones en el
+                    lugar de trabajo.</li>
+                <li>Productividad: Una iluminación adecuada mejora la concentración y la precisión, lo que aumenta la
+                    productividad.</li>
+                <li>Bienestar: La iluminación natural y una iluminación artificial bien diseñada pueden mejorar el
+                    estado de ánimo y el bienestar general.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card border-primary mt-4" [@fadeInAnimation]="'in'" (click)="toggleCard('ventilacion')"
+        [ngClass]="{'selected-card': selectedCard === 'ventilacion'}">
+        <div class="card-header">
+            <h4><i class="fas fa-wind"></i> Ventilación</h4>
+        </div>
+        <div class="card-body">
+            <p>La ventilación adecuada en el lugar de trabajo también es esencial:</p>
+            <ul>
+                <li>Calidad del Aire: Una ventilación deficiente puede resultar en la acumulación de contaminantes en el
+                    aire interior, lo que puede causar problemas de salud.</li>
+                <li>Control de Temperatura: La ventilación adecuada ayuda a mantener una temperatura confortable en el
+                    lugar de trabajo, lo que es esencial para la comodidad de los trabajadores.</li>
+                <li>Reducción de Olores: Una buena ventilación ayuda a reducir olores desagradables y a mantener un
+                    ambiente más agradable.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card border-primary mt-4" [@fadeInAnimation]="'in'" (click)="toggleCard('color')"
+        [ngClass]="{'selected-card': selectedCard === 'color'}">
+        <div class="card-header">
+            <h4><i class="fas fa-paint-brush"></i> Color</h4>
+        </div>
+        <div class="card-body">
+            <p>Los colores en el entorno laboral también pueden influir en el bienestar y el rendimiento:</p>
+            <ul>
+                <li>Psicología del Color: Los colores pueden afectar el estado de ánimo y las emociones de los
+                    trabajadores.</li>
+                <li>Visibilidad: El uso de colores contrastantes puede mejorar la visibilidad de las señales de
+                    seguridad y las áreas de trabajo.</li>
+                <li>Estética: El uso de colores agradables y armoniosos puede mejorar la estética del entorno laboral y
+                    promover un ambiente más agradable.</li>
+            </ul>
+        </div>
+    </div>
+</div>

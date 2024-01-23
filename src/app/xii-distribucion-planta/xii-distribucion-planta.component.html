@@ -1,0 +1,41 @@
+<div class="container text-center mt-2">
+    <h2><i class="fas fa-th-large"></i> Análisis de Distribución en Planta</h2>
+</div>
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-body">
+
+            <div class="form-group mt-1">
+                <label for="definicion">Definición de Distribución en Planta:</label>
+                <input type="text" [(ngModel)]="definicion" class="form-control" id="definicion"
+                    placeholder="Ingrese la definición de distribución en planta">
+            </div>
+
+            <div class="form-group mt-1">
+                <label for="tipos">Tipos de Distribución en Planta (separados por coma):</label>
+                <input [(ngModel)]="tipos" type="text" class="form-control" id="tipos"
+                    placeholder="Ejemplo: Posicional, Por proceso, Por producto">
+            </div>
+
+            <div class="form-group mt-1">
+                <label for="factores">Factores que Afectan la Distribución (separados por coma):</label>
+                <input [(ngModel)]="factores" type="text" class="form-control" id="factores"
+                    placeholder="Ejemplo: Espacio disponible, Flujo de trabajo, Requisitos de equipo">
+            </div>
+
+            <button (click)="analizarDistribucion()" class="btn btn-success mt-1">
+                <i class="fas fa-chart-line"></i> Analizar Distribución
+            </button>
+        </div>
+    </div>
+
+    <div id="resultado" class="card mt-3" *ngIf="mostrarResultados">
+        <div class="card-body">
+            <h3 class="card-title"><i class="fas fa-clipboard-check"></i> Resultados del Análisis de Distribución en
+                Planta</h3>
+            <p *ngIf="definicion.trim() !== ''"><strong>Definición:</strong> {{ definicion }}</p>
+            <p *ngIf="tipos.trim() !== ''"><strong>Tipos de Distribución:</strong> {{ tipos }}</p>
+            <p *ngIf="factores.trim() !== ''"><strong>Factores que Afectan la Distribución:</strong> {{ factores }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container text-center mt-2">
+    <h2>
+        <i class="fas fa-pen"></i> Registro de Estudio de Movimientos y Medición del Trabajo
+    </h2>
+</div>
+
+<div class="container mt-2">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group mt-1">
+                <label for="actividad">Actividad:</label>
+                <input type="text" class="form-control" id="actividad" [(ngModel)]="actividad"
+                    placeholder="Ingrese la actividad">
+            </div>
+
+            <div class="form-group mt-1">
+                <label for="tiempo">Tiempo (en minutos):</label>
+                <input type="number" class="form-control" id="tiempo" [(ngModel)]="tiempo"
+                    placeholder="Ingrese el tiempo">
+            </div>
+
+            <button class="btn btn-success mt-1" (click)="registrarTiempo()">
+                <i class="fas fa-clock"></i> Registrar Tiempo
+            </button>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-header">
+            <h3 class="mb-0">
+                <i class="fas fa-history"></i> Historial de Tiempos
+            </h3>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let registro of historial" class="list-group-item">
+                <i class="fas fa-list-alt"></i> Actividad: {{ registro.actividad }}, Tiempo: {{ registro.tiempo }}
+                minutos
+            </li>
+        </ul>
+    </div>
+</div>

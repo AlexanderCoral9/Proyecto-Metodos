@@ -1,0 +1,179 @@
+<div class="container text-center mt-2">
+    <h2><i class="fas fa-hand-paper"></i> Metodología de las 5S</h2>
+</div>
+
+
+<div class="container mt-2">
+    <div class="card border-info mb-3">
+        <div class="card-header">
+            <h2>Seiri (Clasificación)</h2>
+        </div>
+        <div class="card-body">
+            <form #formSeiri="ngForm">
+                <div *ngFor="let pregunta of preguntasSeiton; let i = index">
+                    <label class="ml-2">{{ pregunta }}</label>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="seiri{{i}}" [(ngModel)]="respuestasSeiri[i]"
+                            value="true" id="seiri-yes-{{i}}" required>
+                        <label class="form-check-label" for="seiri-yes-{{i}}">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="seiri{{i}}" [(ngModel)]="respuestasSeiri[i]"
+                            value="false" id="seiri-no-{{i}}" required>
+                        <label class="form-check-label" for="seiri-no-{{i}}">No</label>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="card border-danger mb-3">
+        <div class="card-header">
+            <h2>Seiton (Orden)</h2>
+        </div>
+        <div class="card-body">
+            <form #formSeiton="ngForm">
+                <div *ngFor="let pregunta of preguntasSeiton; let i = index">
+                    <label class="ml-2">{{ pregunta }}</label>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="seiton{{i}}"
+                            [(ngModel)]="respuestasSeiton[i]" value="true" id="seiton-yes-{{i}}" required>
+                        <label class="form-check-label" for="seiton-yes-{{i}}">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="seiton{{i}}"
+                            [(ngModel)]="respuestasSeiton[i]" value="false" id="seiton-no-{{i}}" required>
+                        <label class="form-check-label" for="seiton-no-{{i}}">No</label>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card border-light mb-3">
+        <div class="card-header">
+            <h2>Seiso (Limpieza)</h2>
+        </div>
+        <div class="card-body">
+            <form #formSeiso="ngForm">
+                <div *ngFor="let pregunta of preguntasSeiso; let i = index">
+                    <label class="ml-2">{{ pregunta }}</label>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="seiso{{i}}" [(ngModel)]="respuestasSeiso[i]"
+                            value="true" id="seiso-yes-{{i}}" required>
+                        <label class="form-check-label" for="seiso-yes-{{i}}">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="seiso{{i}}" [(ngModel)]="respuestasSeiso[i]"
+                            value="false" id="seiso-no-{{i}}" required>
+                        <label class="form-check-label" for="seiso-no-{{i}}">No</label>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="seccion">
+
+</div>
+
+<div class="container">
+    <div class="card border-warning mb-3">
+        <div class="card-header">
+            <h2>Seiketsu (Estandarización)</h2>
+        </div>
+        <div class="card-body">
+            <form #formSeiketsu="ngForm">
+                <div *ngFor="let pregunta of preguntasSeiketsu; let i = index">
+                    <label class="ml-2">{{ pregunta }}</label>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="seiketsu{{i}}"
+                            [(ngModel)]="respuestasSeiketsu[i]" value="true" id="seiketsu-yes-{{i}}" required>
+                        <label class="form-check-label" for="seiketsu-yes-{{i}}">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="seiketsu{{i}}"
+                            [(ngModel)]="respuestasSeiketsu[i]" value="false" id="seiketsu-no-{{i}}" required>
+                        <label class="form-check-label" for="seiketsu-no-{{i}}">No</label>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card border-success mb-3">
+        <div class="card-header">
+            <h2>Shitsuke (Disciplina)</h2>
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                <form #formShitsuke="ngForm">
+                    <div *ngFor="let pregunta of preguntasShitsuke; let i = index">
+                        <label class="ml-2">{{ pregunta }}</label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="shitsuke{{i}}"
+                                [(ngModel)]="respuestasShitsuke[i]" value="true" id="shitsuke-yes-{{i}}" required>
+                            <label class="form-check-label" for="shitsuke-yes-{{i}}">Sí</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="shitsuke{{i}}"
+                                [(ngModel)]="respuestasShitsuke[i]" value="false" id="shitsuke-no-{{i}}" required>
+                            <label class="form-check-label" for="shitsuke-no-{{i}}">No</label>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="d-grid gap-2">
+        <button type="button" class="btn btn-primary" (click)="getResultados()"
+            [disabled]="formSeiri.invalid || formSeiton.invalid || formSeiso.invalid || formSeiketsu.invalid || formShitsuke.invalid">
+            Enviar
+        </button>
+    </div>
+</div>
+<div class="container resultados mt-3" *ngIf="mostrarResultados">
+    <div class="card border-success mb-3">
+        <div class="card-header">
+            <h2 class="text-center">Resultados de la Metodología de las 5S</h2>
+        </div>
+        <div class="card-body">
+            <div class="item" *ngFor="let porcentaje of arrayPorcentajes; let i = index">
+                <h3 class="mb-3">{{ arrayNombres[i] }}</h3>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" [style.width.%]="porcentaje">
+                        {{ porcentaje }}%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-grid gap-2">
+        <a href="/fiveS" (click)="reloadPage()" class="btn btn-warning">Nuevo</a>
+    </div>
+
+</div>
+
+<div class="container mt-2"></div>

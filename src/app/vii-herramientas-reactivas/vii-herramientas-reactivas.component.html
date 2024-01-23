@@ -1,0 +1,35 @@
+<div class="container text-center mt-2">
+    <h2 class="mb-0"><i class="fas fa-tools"></i> Herramientas de Calidad Reactivas</h2>
+</div>
+
+<div class="container">
+    <div class="card mt-2">
+        <div class="card-header bg-success text-white">
+        </div>
+
+        <div class="card-body">
+            <div class="mb-4">
+                <h3 class="mb-3">Lista de Chequeo</h3>
+                <div class="input-group">
+                    <input type="text" id="chequeo" class="form-control" [(ngModel)]="itemAVerificar"
+                        placeholder="Ingrese el ítem a verificar">
+                    <button class="btn btn-success" (click)="agregarChequeo()"><i class="fas fa-plus"></i> Agregar a la
+                        Lista</button>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h3 class="mb-3">Lista de Chequeo</h3>
+                <ul class="list-group" id="historial">
+                    <li class="list-group-item" *ngFor="let item of historial"><i class="fas fa-check"></i> {{ item }}
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="mb-3">Histograma de Verificaciones</h3>
+                <canvas id="histograma" class="chart-canvas"></canvas>
+            </div>
+        </div>
+    </div>
+</div>

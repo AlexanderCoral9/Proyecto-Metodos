@@ -1,0 +1,25 @@
+<div class="container text-center mt-2">
+    <h2><i class="fas fa-chart-bar"></i> Indicadores de Gestión</h2>
+</div>
+
+<div class="container mt-1" *ngFor="let indicador of arrayIndicadores">
+    <div class="row justify-content-center">
+        <h3>{{ indicador.nombre }}</h3>
+
+        <div class="form-group">
+            <label class="col-form-label" for="{{ indicador.nombreCriterio1 }}">{{ indicador.nombreCriterio1 }}</label>
+            <input type="text" class="form-control" placeholder="" [id]="indicador.nombreCriterio1"
+                [(ngModel)]="indicador.criterio1" required>
+
+            <label class="col-form-label mt-1" for="{{ indicador.nombreCriterio2 }}">{{ indicador.nombreCriterio2
+                }}</label>
+            <input type="text" class="form-control" placeholder="" [id]="indicador.nombreCriterio2"
+                [(ngModel)]="indicador.criterio2" required>
+
+            <button class="btn btn-primary mt-1" type="button" (click)="calcularIndicador(indicador)">Calcular</button>
+            <button *ngIf="indicador.clickIndicador" type="button" class="btn btn-dark disabled mt-1 ms-1">
+                <b>{{ indicador.msgIndicador}}</b>
+            </button>
+        </div>
+    </div>
+</div>

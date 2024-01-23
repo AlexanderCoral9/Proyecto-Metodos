@@ -1,0 +1,28 @@
+<div class="container text-center mt-2">
+    <h2><i class="fas fa-puzzle-piece"></i> Balance de Línea de Ensamblaje</h2>
+</div>
+
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            <label for="tiempoEstacion">Tiempo por Estación (en segundos):</label>
+            <textarea class="form-control mb-3" id="tiempoEstacion" placeholder="Ingrese el tiempo por estación"
+                [(ngModel)]="tiempoEstacion"></textarea>
+
+            <button class="btn btn-success" (click)="calcularBalance()">
+                <i class="fas fa-calculator"></i> Calcular Balance
+            </button>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h3>Resultados del Balance de Línea</h3>
+            <p><strong>Método Analítico:</strong> {{ analitico }}</p>
+            <p><strong>Método de Peso Posicional:</strong> {{ pesoPosicional }}</p>
+            <p><strong>Método Heurístico:</strong> {{ heuristico }}</p>
+        </div>
+    </div>
+</div>

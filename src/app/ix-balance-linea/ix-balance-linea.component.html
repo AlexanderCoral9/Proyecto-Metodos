@@ -1,0 +1,50 @@
+<div class="container text-center mt-2">
+    <h2 class="mb-4"><i class="fas fa-balance-scale"></i> Balance de Línea - Indicadores de Eficiencia</h2>
+</div>
+
+<div class="container mt-1">
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="form-group mt-1 text-dark">
+                <label for="tipoLinea">Tipo de Línea:</label>
+                <select id="tipoLinea" class="form-control text-dark" [(ngModel)]="tipoLinea">
+                    <option value="produccion">Línea de Producción</option>
+                    <option value="ensamblaje">Línea de Ensamblaje</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-1 text-dark">
+                <label for="numeroEstaciones">Número de Estaciones:</label>
+                <input type="number" id="numeroEstaciones" class="form-control" [(ngModel)]="numeroEstaciones"
+                    placeholder="Número de estaciones">
+            </div>
+
+            <div class="form-group mt-1 text-dark">
+                <label for="produccionPorEstacion">Producción por Estación (unidades por hora):</label>
+                <input type="number" id="produccionPorEstacion" class="form-control" [(ngModel)]="produccionPorEstacion"
+                    placeholder="Producción por estación">
+            </div>
+
+            <button class="btn btn-success mt-1" (click)="calcularBalance()">
+                <i class="fas fa-calculator"></i> Calcular Balance
+            </button>
+        </div>
+    </div>
+    <div class="card border-success mb-3" *ngIf="mostrarResultados">
+        <div class="card-header">
+            <h3><i class="fas fa-poll"></i> Resultados del Balance de Línea</h3>
+        </div>
+        <div class="card-body p-4 rounded">
+            <p class="text-dark"><strong>Tipo de Línea:</strong> {{ tipoLinea }}</p>
+            <p class="text-dark"><strong>Número de Estaciones:</strong> {{ numeroEstaciones }}</p>
+            <p class="text-dark"><strong>Producción por Estación:</strong> {{ produccionPorEstacion }} unidades por
+                hora</p>
+            <p class="text-dark"><strong>Producción Total:</strong> {{ produccionTotal }} unidades por hora</p>
+            <p class="text-dark"><strong>Tiempo Muerto:</strong> {{ tiempoMuerto }} minutos</p>
+            <p class="text-dark"><strong>Eficiencia de Línea:</strong> {{ eficienciaLinea ?
+                eficienciaLinea.toFixed(2) + '%' : 'N/A' }}
+            </p>
+        </div>
+    </div>
+</div>
